@@ -49,11 +49,6 @@ body {
     padding-inline: 2.4rem;
   }
 }
-@media (min-width: 1024px) {
-  .section {
-    padding-block: 1.6rem; /* lidt mere luft på desktop */
-  }
-}
 
 /* ===== topnav (flexbox) ===== */
 .site-header {
@@ -129,13 +124,13 @@ body {
   font-size: 2rem;
   color: var(--brand-blue);
   letter-spacing: 0.04rem;
-  padding-left: 2.4rem;
+  padding-left: 0.4rem;
 }
 .name-lockup .last {
   font-size: 6rem;
   color: var(--brand-orange);
   letter-spacing: 0.08em;
-  padding-left: 2rem;
+  padding-left: 0rem;
 }
 
 /* billed-kortet */
@@ -146,6 +141,7 @@ body {
   padding: 1rem;
   max-width: 520px;
   margin-right: auto;
+  margin-left: 0%;
 }
 
 .profile-caption {
@@ -252,7 +248,7 @@ body {
   display: grid;
   grid-template-columns: 1fr; /* mobil */
   gap: 1rem;
-  padding-left: 2rem;
+  padding-left: 0rem;
   padding-top: 1rem;
 }
 .cv-card {
@@ -272,7 +268,7 @@ body {
   display: grid;
   grid-template-columns: 1fr; /* mobil */
   gap: 1rem;
-  padding-left: 2rem;
+  padding-left: 0rem;
   padding-top: 1rem;
 }
 
@@ -282,8 +278,8 @@ body {
   border-radius: 12px;
   padding: 1rem;
   margin: 0;
-  /*max-width: 300px;*/
 }
+
 .card h3 {
   margin-top: 0rem;
   color: var(--brand-blue);
@@ -307,12 +303,12 @@ body {
   .about {
     text-align: left;
     margin-inline: 0;
-    padding-left: 2rem;
+    padding-left: 0rem;
   }
 
   /* button række til venstre */
   .button-nav-row {
-    justify-content: flex-start;
+    justify-content: flex-center;
   }
 
   /* Portfolio - 2 kolonner */
@@ -329,7 +325,7 @@ body {
   }
 
   .site-footer {
-    padding-left: 2rem;
+    padding-left: 0rem;
   }
 
   /* CV - 2 kolonner */
