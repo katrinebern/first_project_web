@@ -190,6 +190,7 @@ body {
   background: var(--card);
   border-top: 1px solid var(--border);
   margin-top: 1.6rem;
+  padding: 1rem;
 }
 
 .footer-grid {
@@ -227,9 +228,9 @@ body {
 }
 
 .footer-list a {
-  color: var(--ink);
+  color: var(--ink);S
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid transparent;S
 }
 
 .footer-list a:hover {
