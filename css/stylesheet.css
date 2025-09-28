@@ -14,11 +14,13 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   margin: 0;
   padding: 0;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -32,25 +34,47 @@ body {
   line-height: 1.6;
 }
 
+/* ===== fælles sektion-spacing (bruges på alle sider) ===== */
+.section {
+  padding-block: 1.6rem; /* ens top/bund på alle sider */
+  padding-inline: 1.6rem; /* ens side-indrykning */
+  margin-inline: auto;
+  max-width: 1200px; /* samme maxbredde alle steder */
+  padding-left: 2rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 1.6rem;
+    padding-inline: 2.4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 1.6rem; /* lidt mere luft på desktop */
+  }
+}
+
 /* ===== topnav (flexbox) ===== */
 .site-header {
   display: flex;
   align-items: center;
-  padding: 1rem 1.25rem;
-  border-radius: 0.3rem;
-  margin-left: auto;
+  padding: 1.6rem 1.6rem;
+  border-radius: 0.8rem;
 }
 
 .site-nav {
   display: flex;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 .site-nav a {
+  /* anchor i site-nav */
   text-decoration: none;
   color: var(--muted);
   font-weight: 600;
-  padding: 0.35rem 0.6rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 0.4rem;
 }
 .site-nav a[aria-current="page"] {
@@ -78,7 +102,6 @@ body {
 .site-main {
   grid-area: main;
 }
-
 .site-footer {
   grid-area: footer;
 }
@@ -89,13 +112,11 @@ body {
   grid-template-columns: 1fr; /* mobil først */
   gap: 2rem;
   align-items: center;
-  padding: 2rem 1.25rem 3rem;
 }
 
 /* venstre kolonne: navn + billede */
 .left-stack {
   display: grid;
-  gap: 1.25rem;
   align-content: start;
 }
 
@@ -107,7 +128,7 @@ body {
 .name-lockup .first {
   font-size: 2rem;
   color: var(--brand-blue);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04rem;
   padding-left: 2.4rem;
 }
 .name-lockup .last {
@@ -126,21 +147,22 @@ body {
   max-width: 520px;
   margin-right: auto;
 }
+
 .profile-caption {
   color: var(--brand-blue);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  margin-top: 0.5rem;
-  letter-spacing: 0.04em;
+  margin-top: 0.8rem;
+  letter-spacing: 0.08rem;
 }
 
 /* højre kolonne: overskrift, tekst, knapper */
-.about-copy {
+.about {
   text-align: center; /* mobil */
   max-width: 60ch;
   margin-inline: auto;
 }
-.about-copy h2 {
+.about h2 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
@@ -148,7 +170,7 @@ body {
   margin: 0 0 0.5rem 0;
   color: var(--brand-blue);
 }
-.about-copy p {
+.about p {
   color: var(--ink);
   margin: 0.75rem auto 1.5rem;
 }
@@ -162,47 +184,50 @@ body {
   background: var(--brand-blue);
   color: var(--bg);
   text-decoration: none;
-  padding: 0.85rem 1.25rem;
-  border-radius: 0.5rem;
   font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
 }
 
-/* ===== footer ===== */
+/* ===== footer (base: mobil) ===== */
 .site-footer {
   background: var(--card);
   border-top: 1px solid var(--border);
-  margin-top: 2rem;
+  margin-top: 1.6rem;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr; /* mobil først: én kolonne */
-  gap: 1.25rem;
-  padding: 1.5rem 1.25rem 1rem;
+  grid-template-columns: 1fr; /* 1 kolonne på mobil */
+  gap: 1.2rem;
   align-items: start;
 }
 
 .footer-heading {
+  display: grid;
   margin: 0 0 0.4rem 0;
-  font-size: 0.95rem;
-  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  letter-spacing: 0.08rem;
   text-transform: uppercase;
   color: var(--brand-blue);
 }
 
 .footer-role {
-  margin: 0.15rem 0 0;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+  display: grid;
+  margin: 0 0 0.4rem 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
   color: var(--ink);
 }
 
 .footer-list {
   list-style: none;
-  margin: 0;
+  margin: 0 0 0.4rem 0;
   padding: 0;
   display: grid;
-  gap: 0.35rem;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
 }
 
 .footer-list a {
@@ -225,27 +250,20 @@ body {
 /* CV layout */
 .cv-grid {
   display: grid;
+  grid-template-columns: 1fr; /* mobil */
   gap: 1rem;
+  padding-left: 2rem;
+  padding-top: 1rem;
 }
 .cv-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
-  margin: 2rem;
+  margin: 0;
 }
 .cv-card h3 {
   margin-top: 0;
-  color: var(--brand-blue);
-}
-
-.cv-header,
-.portfolio-header {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  margin-left: 2rem;
   color: var(--brand-blue);
 }
 
@@ -254,57 +272,107 @@ body {
   display: grid;
   grid-template-columns: 1fr; /* mobil */
   gap: 1rem;
+  padding-left: 2rem;
+  padding-top: 1rem;
 }
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
+  margin: 0;
+  /*max-width: 300px;*/
 }
 .card h3 {
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   color: var(--brand-blue);
 }
 
-/* 2/3 kolonner ved større skærme */
+.site-nav {
+  justify-content: center;
+}
+.about {
+  text-align: center;
+}
+
+/* ========== Tablet (≥768px) ========== */
 @media (min-width: 768px) {
+  /* Nav til højre fra tablet */
+  .site-nav {
+    justify-content: flex-end;
+  }
+
+  /* About-tekst venstrejusteres */
+  .about {
+    text-align: left;
+    margin-inline: 0;
+    padding-left: 2rem;
+  }
+
+  /* button række til venstre */
+  .button-nav-row {
+    justify-content: flex-start;
+  }
+
+  /* Portfolio - 2 kolonner */
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-@media (min-width: 1024px) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
-/* to kolonner på desktop */
-@media (min-width: 1024px) {
+  /* Footer - 3 kolonner (brand lidt bredere) */
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    column-gap: 2rem;
+    margin-inline: auto;
+  }
+
+  .site-footer {
+    padding-left: 2rem;
+  }
+
+  /* CV - 2 kolonner */
   .cv-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ===== footer breakpoints ===== */
-@media (min-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1.2fr 1fr 1fr; /* “brand” lidt bredere */
-  }
-}
-
-/* ===== breakpoints ===== */
-@media (min-width: 768px) {
-  .about-copy {
-    text-align: left;
-    margin-inline: 0;
-  }
-  .button-nav-row {
-    justify-content: flex-start;
-  }
-}
+/* ========== Desktop (≥1024px) ========== */
 @media (min-width: 1024px) {
+  /* About 2 kolonner*/
   .about-grid {
-    grid-template-columns: 1fr 1fr; /* to kolonner som i mockup */
-    column-gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  /* CV → 2 kolonner */
+  .cv-grid {
+    gap: 2rem;
+  }
+
+  /* Portfolio → 3 kolonner */
+  .projects {
+    gap: 2rem;
+  }
+
+  /* lige fordeling kolonner */
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    column-gap: 2rem;
+    margin-inline: auto;
+    justify-items: center;
+  }
+
+  /* About: udnyt mere bredde på desktop, uden nye klasser */
+  .about {
+    max-width: none;
+    margin-inline: 0;
+    text-align: left;
+  }
+  .profile-card {
+    max-width: none;
+    margin-right: 0;
   }
 }
