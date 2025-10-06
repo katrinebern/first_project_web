@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- NOTE: Basic document setup and metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Katrine - About me</title>
-
-    <!-- NOTE: Link to the main stylesheet -->
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
 
-  <!-- NOTE: Wrapper uses CSS Grid to arrange header, main, and footer -->
   <body class="wrapper">
-    <!-- ===== Header + Navigation ===== -->
-    <!-- NOTE: Contains the main site navigation with links to all pages -->
     <header class="site-header">
       <div class="section">
         <nav class="site-nav" aria-label="Primary navigation">
-          <!-- NOTE: aria-current="page" marks the active page for screen reader tools -->
           <a href="index.html" aria-current="page">About me</a>
           <a href="cv.html">CV</a>
           <a href="portfolio.html">Portfolio</a>
@@ -25,19 +18,15 @@
       </div>
     </header>
 
-    <!-- ===== Main Content ===== -->
-    <!-- NOTE: About-page layout with two columns (name/photo + text/buttons) -->
     <main class="site-main">
       <section class="section">
         <div class="about-grid" aria-labelledby="about-title">
-          <!-- Left column: profile name and image -->
           <div class="left-column">
             <div class="title-lock">
               <h1 class="first">Katrine</h1>
               <h1 class="last">BERN</h1>
             </div>
 
-            <!-- NOTE: Profile image with caption -->
             <figure class="profile-card">
               <img
                 src="images/profilbillede_sort_hvid.jpg"
@@ -49,11 +38,9 @@
             </figure>
           </div>
 
-          <!-- Right column: short bio + call-to-action buttons -->
           <div class="right-column">
             <h2 id="about-title">About me</h2>
             <p>
-              <!-- NOTE: Short introduction text -->
               My name is Katrine Bern and I am 25 years old. I am currently
               doing my 5th semester of Global Business Engineering, SW at VIA
               University College. When I am not studying or attending school, I
@@ -72,7 +59,6 @@
               which is why I decided to study Global Business Engineering.
             </p>
 
-            <!-- NOTE: CTA (call to action) buttons linking to CV and Portfolio pages -->
             <div class="button-nav-row">
               <a class="button" href="cv.html">CV</a>
               <a class="button" href="portfolio.html">Portfolio</a>
@@ -82,18 +68,14 @@
       </section>
     </main>
 
-    <!-- ===== Footer ===== -->
-    <!-- NOTE: Contains contact info, location, and social media links -->
     <footer class="site-footer">
       <div class="section">
         <div class="footer-grid">
-          <!-- Footer column 1: name + role -->
           <section aria-labelledby="footer-info">
             <h2 id="footer-info" class="footer-heading">Katrine Bern</h2>
             <p class="footer-role">GLOBAL BUSINESS ENGINEER | SW</p>
           </section>
 
-          <!-- Footer column 2: contact info -->
           <section aria-labelledby="footer-contact">
             <h2 id="footer-contact" class="footer-heading">Contact</h2>
             <ul class="footer-list">
@@ -102,7 +84,6 @@
             </ul>
           </section>
 
-          <!-- Footer column 3: social media links -->
           <nav class="footer-nav" aria-label="Social media">
             <h2 id="footer-social" class="footer-heading">Social media</h2>
             <ul class="footer-list">
@@ -113,13 +94,11 @@
                   >LinkedIn</a
                 >
               </li>
-
               <li>
                 <a href="https://www.facebook.com/katrine.bern/" target="_blank"
                   >Facebook</a
                 >
               </li>
-
               <li>
                 <a href="https://www.instagram.com/katrinebern/" target="_blank"
                   >Instagram</a
@@ -128,7 +107,6 @@
             </ul>
           </nav>
         </div>
-        <!-- NOTE: Copyright line -->
         <div class="footer-bottom"><small>© 2025 Katrine Bern</small></div>
       </div>
     </footer>
