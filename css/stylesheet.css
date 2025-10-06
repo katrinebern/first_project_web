@@ -1,4 +1,5 @@
-/* ===== farver + typografi ===== */
+/* ===== Color system + base typography =====
+   NOTE: Defines design colors and text settings used across all pages. */
 :root {
   --bg: #f5f7fa;
   --text: #111;
@@ -9,25 +10,28 @@
   --muted: #6b7280;
   --card: #ffffff;
   --border: #e5e7eb;
-  --hover: #6b7280;
 }
 
+/* Global box model */
 * {
   box-sizing: border-box;
 }
 
+/* Reset margins/padding on root elements for consistent layout flow */
 html,
 body {
   margin: 0;
   padding: 0;
 }
 
+/* Images scale with container width and keep proportions */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
+/* Base text styling */
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--bg);
@@ -35,16 +39,16 @@ body {
   line-height: 1.6;
 }
 
-/* ===== fælles sektion-spacing (bruges på alle sider) ===== */
+/* ===== Section wrapper =====
+   NOTE: Centers page content and adds consistent spacing. */
 .section {
-  padding-block: 1rem; /* ens top/bund på alle sider */
-  padding-inline: 1.6rem; /* ens side-indrykning */
-  margin-inline: auto;
-  max-width: 1200px; /* samme maxbredde alle steder */
-  padding: 5%;
+  margin-inline: auto; /* center block within viewport */
+  max-width: 1200px; /* readable line-length cap */
+  padding: 5%; /* mobile-friendly breathing room */
   letter-spacing: 0.04rem;
 }
 
+/* Tablet+ spacing becomes more precise than percentage padding */
 @media (min-width: 768px) {
   .section {
     padding-block: 1.6rem;
@@ -52,22 +56,26 @@ body {
   }
 }
 
-/* ===== topnav (flexbox) ===== */
+/* ===== Top navigation (Flexbox) =====
+   NOTE: Styles the site’s main menu with hover and active states. */
 .site-header {
   display: flex;
   align-items: center;
   padding: 1rem 1rem;
-  border-radius: 0.8rem;
+  border-radius: 0.8rem; /* rounded corners */
 }
 
+/* Horizontal nav with wrapping on small screens */
 .site-nav {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   flex-wrap: wrap;
 }
+
+/* Nav links: neutral by default, brand-blue highlight on current/hover */
 .site-nav a {
-  /* anchor i site-nav */
+  /* NOTE: Link styling is here so header stays clean */
   text-decoration: none;
   color: var(--muted);
   font-weight: 600;
@@ -83,15 +91,16 @@ body {
   color: var(--bg);
 }
 
-/* ===== side-layout (grid) ===== */
+/* ===== Overall page layout (CSS Grid) =====
+   NOTE: Header/Main/Footer areas fill full viewport height. */
 .wrapper {
   display: grid;
   grid-template-areas:
     "header"
     "main"
     "footer";
-  grid-template-rows: auto 1fr auto;
-  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto; /* footer sticks to bottom */
+  min-height: 100dvh; /* dynamic viewport height */
 }
 .site-header {
   grid-area: header;
@@ -103,47 +112,50 @@ body {
   grid-area: footer;
 }
 
-/* ===== about-hero (to kolonner på desktop) ===== */
+/* ===== About section layout (1 column on mobile, 2 on desktop) =====
+   NOTE: Main layout of the About page - includes name, image, and intro text. */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr; /* mobil først */
+  grid-template-columns: 1fr; /* mobile first */
   gap: 2rem;
-  align-items: center;
+  align-items: center; /* vertically align content within row */
 }
 
-/* venstre kolonne: navn + billede */
-.left-stack {
+/* Left column: name + profile image */
+.left-column {
   display: grid;
-  align-content: start;
+  align-content: start; /* stack content from the top */
 }
 
-.name-lockup h1 {
+/* Title lockup styling (first/last sizes and colors) */
+.title-lock h1 {
   margin: 0;
   font-weight: 700;
   line-height: 0.9;
 }
-.name-lockup .first {
+.title-lock .first {
   font-size: 2rem;
   color: var(--brand-blue);
   letter-spacing: 0.04rem;
   padding-left: 0.4rem;
 }
-.name-lockup .last {
+.title-lock .last {
   font-size: 6rem;
   color: var(--brand-orange);
   letter-spacing: 0.08rem;
   padding-left: 0rem;
 }
 
-/* billed-kortet */
+/* ===== Profile card (image + profile caption) =====
+   NOTE: Contains profile photo and title. */
 .profile-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1rem;
-  max-width: 520px;
-  margin-right: auto;
-  margin-left: 0%;
+  max-width: 520px; /* keeps image card from stretching too wide */
+  margin-right: auto; /* push card left in its grid cell */
+  margin-left: 0;
 }
 
 .profile-caption {
@@ -154,13 +166,13 @@ body {
   letter-spacing: 0.08rem;
 }
 
-/* højre kolonne: overskrift, tekst, knapper */
-.about {
-  text-align: center; /* mobil */
-  max-width: 60ch;
-  margin-inline: auto;
+/* Right column: text + CTA (Call to action) buttons */
+.right-column {
+  text-align: center; /* centered on mobile for balance */
+  max-width: 60ch; /* readable measure for paragraphs */
+  margin-inline: auto; /* center block on mobile */
 }
-.about h2 {
+.right-column h2 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 700;
@@ -168,17 +180,68 @@ body {
   margin: 0 0 0.5rem 0;
   color: var(--brand-blue);
 }
-.about p {
+.right-column p {
   color: var(--ink);
   margin: 0.8rem auto 1.6rem;
 }
+
+/* Inline CTA (Call to action) buttons row (flex for simple centering/gap) */
 .button-nav-row {
-  display: flex; /* flex til knapperne */
+  display: flex;
   gap: 1rem;
   justify-content: center;
   padding: 1rem;
 }
 .button {
+  display: inline-block; /* allows padding + no full-width */
+  background: var(--brand-blue);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+}
+
+/* ===== CV + Portfolio grid layout =====
+   NOTE: Shared grid system used for cards on both pages. */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* single column on mobile */
+  gap: 1rem;
+  padding-left: 0rem;
+  padding-top: 1rem;
+}
+
+/* Reusable card base */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 100%;
+}
+.card h3 {
+  margin-top: 0;
+  color: var(--brand-blue);
+}
+
+/* ===== Portfolio project cards =====
+   NOTE: Displays individual projects with preview image and link button. */
+.figure-project {
+  display: grid;
+  background: var(--project-border);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: 0;
+  justify-items: center; /* center children horizontally in cell */
+  justify-content: center; /* center tracks if extra space appears */
+}
+
+/* Secondary button (used inside cards) */
+.button-card {
   display: inline-block;
   background: var(--brand-blue);
   color: var(--bg);
@@ -188,14 +251,14 @@ body {
   border-radius: 0.4rem;
 }
 
-/*
-.button-nav-row:hover{
+/* Small hover lift for card actions */
+.button-card:hover {
   transform: translateY(-1px);
-  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;   
+  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
 }
-*/
 
-/* ===== footer (base: mobil) ===== */
+/* ===== Footer (mobile-first layout) =====
+   NOTE: Contact info, role, and social media links. */
 .site-footer {
   background: var(--card);
   border-top: 1px solid var(--border);
@@ -205,11 +268,12 @@ body {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr; /* 1 kolonne på mobil */
+  grid-template-columns: 1fr; /* one column on small screens */
   gap: 1.2rem;
   align-items: start;
 }
 
+/* Footer headings + metadata */
 .footer-heading {
   display: grid;
   margin: 0 0 0.4rem 0;
@@ -227,6 +291,7 @@ body {
   color: var(--ink);
 }
 
+/* Footer link list (unstyled + compact spacing) */
 .footer-list {
   list-style: none;
   margin: 0 0 0.4rem 0;
@@ -240,13 +305,14 @@ body {
 .footer-list a {
   color: var(--ink);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid transparent; /* subtle hover underline */
 }
 
 .footer-list a:hover {
   border-color: var(--brand-blue);
 }
 
+/* Small copyright bar */
 .footer-bottom {
   border-top: 1px solid var(--border);
   text-align: center;
@@ -254,139 +320,63 @@ body {
   padding: 0.75rem 1.25rem;
 }
 
-/* CV + Portfolio layout */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr; /* mobil */
-  gap: 1rem;
-  padding-left: 0rem;
-  padding-top: 1rem;
-}
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1rem;
-  max-width: 100%;
-}
-.card h3 {
-  margin-top: 0;
-  color: var(--brand-blue);
-}
-
-/* Portfolio card layout*/
-.figure-project {
-  background: var(--project-border);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1rem;
-  max-width: 100%;
-  margin-right: auto;
-  margin-left: 0%;
-  justify-items: center;
-  justify-content: center;
-}
-
-.button-project {
-  display: inline-block;
-  justify-content: flex-center;
-  background: var(--brand-blue);
-  color: var(--bg);
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0.4rem 0.8rem;
-  border-radius: 0.4rem;
-}
-
-.button-project:hover {
-  transform: translateY(-1px);
-  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
-}
-
-.site-nav {
-  justify-content: center;
-}
-.about {
-  text-align: center;
-}
-
-/* ========== Tablet (≥768px) ========== */
+/* ========== Tablet (≥768px) ==========
+   NOTE: Layout expands; footer becomes three columns (grid widens). */
 @media (min-width: 768px) {
-  /* Nav til højre fra tablet */
-  .site-nav {
-    justify-content: flex-end;
-  }
-
-  /* About-tekst venstrejusteres */
-  .about {
+  /* Right column: switch to left-aligned reading */
+  .right-column {
     text-align: left;
     margin-inline: 0;
     padding-left: 0rem;
   }
 
-  /* button række til venstre */
-  .button-nav-row {
-    justify-content: flex-center;
-  }
-
-  /* Portfolio - 2 kolonner */
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Footer - 3 kolonner (brand lidt bredere) */
+  /* Footer switches to three equal columns */
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
-    max-width: 1100px;
+    max-width: 1100px; /* keep lines readable */
     column-gap: 2rem;
     margin-inline: auto;
   }
 
-  .site-footer {
-    padding-left: 0rem;
-  }
-
-  /* CV - 2 kolonner */
+  /* CV/Portfolio grid becomes two columns */
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ========== Desktop (≥1024px) ========== */
+/* ========== Desktop (≥1024px) ==========
+   NOTE: Wider layout with two About columns and more spacing between elements. */
 @media (min-width: 1024px) {
-  /* About 2 kolonner*/
+  /* About section becomes two columns */
   .about-grid {
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
   }
 
-  /* CV → 2 kolonner */
+  /* Increase spacing between cards on large screens */
   .grid {
     gap: 2rem;
   }
 
-  /* Portfolio → 3 kolonner */
-  .projects {
-    gap: 2rem;
+  /* Profile card can grow a bit on desktop */
+  .profile-card {
+    max-width: none;
+    margin-right: 0;
   }
 
-  /* lige fordeling kolonner */
+  /* About right column uses full width on desktop */
+  .right-column {
+    max-width: none;
+    margin-inline: 0;
+    text-align: left;
+  }
+
+  /* Footer columns stay equal; center items for balance */
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
     max-width: 1100px;
     column-gap: 2rem;
     margin-inline: auto;
     justify-items: center;
-  }
-
-  /* About: udnyt mere bredde på desktop, uden nye klasser */
-  .about {
-    max-width: none;
-    margin-inline: 0;
-    text-align: left;
-  }
-  .profile-card {
-    max-width: none;
-    margin-right: 0;
   }
 }

@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- NOTE: Basic document setup and metadata -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- NOTE: Page title shown in browser tab -->
     <title>Katrine - CV</title>
+
+    <!-- NOTE: Link to the shared stylesheet -->
     <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
+
+  <!-- NOTE: Wrapper uses CSS Grid to organize header, main, and footer -->
   <body class="wrapper">
+    <!-- ===== Header + Navigation ===== -->
+    <!-- NOTE: Site navigation identical across all pages -->
     <header class="site-header">
       <div class="section">
-        <nav class="site-nav" aria-label="Primær navigation">
+        <nav class="site-nav" aria-label="Primary navigation">
           <a href="index.html">About me</a>
           <a href="cv.html" aria-current="page">CV</a>
           <a href="portfolio.html">Portfolio</a>
@@ -17,13 +26,19 @@
       </div>
     </header>
 
+    <!-- ===== Main Content ===== -->
+    <!-- NOTE: CV page structured as a grid of "card" sections -->
     <main class="site-main">
       <section class="section">
-        <div class="name-lockup">
+        <!-- NOTE: Page heading with two-line title -->
+        <div class="title-lock">
           <h1 class="first">Curriculum</h1>
           <h1 class="last">VITAE</h1>
         </div>
-        <div class="grid" aria-label="CV-indhold">
+
+        <!-- NOTE: Each card below represents a CV category -->
+        <div class="grid" aria-label="CV">
+          <!-- ===== Education section ===== -->
           <article class="card">
             <h3>Education</h3>
             <ul>
@@ -58,6 +73,7 @@
             </ul>
           </article>
 
+          <!-- ===== Experience section ===== -->
           <article class="card">
             <h3>Experience</h3>
             <ul>
@@ -131,6 +147,7 @@
             </ul>
           </article>
 
+          <!-- ===== Additional Courses section ===== -->
           <article class="card">
             <h3>Additional Courses</h3>
             <ul>
@@ -175,6 +192,7 @@
             </ul>
           </article>
 
+          <!-- ===== Languages section ===== -->
           <article class="card">
             <h3>Languages</h3>
             <ul>
@@ -209,8 +227,10 @@
             </ul>
           </article>
 
+          <!-- ===== Competences section ===== -->
           <article class="card">
             <h3>Competences</h3>
+            <!-- NOTE: List of key skills and tools -->
             <strong>
               <ul>
                 <li>HTML</li>
@@ -222,17 +242,19 @@
             </strong>
           </article>
 
+          <!-- ===== Personality test links ===== -->
           <article class="card">
-            <h3>Personality Type</h3>
+            <h3>Personality Type Test Results</h3>
+            <!-- NOTE: Buttons link to external pages and personal PDF -->
             <a
-              class="button-project"
+              class="button-card"
               href="https://www.humanmetrics.com/personality/entj"
               target="_blank"
               >ENTJ - Read more</a
             ><br /><br />
 
             <a
-              class="button-project"
+              class="button-card"
               href="pdf/Personal Profile.pdf"
               target="_blank"
               >E-interpersonal - Read more</a
@@ -242,23 +264,30 @@
       </section>
     </main>
 
+    <!-- ===== Footer ===== -->
+    <!-- NOTE: Same footer layout used across all pages -->
     <footer class="site-footer">
       <div class="section">
         <div class="footer-grid">
-          <section aria-labelledby="f-brand">
-            <h2 id="f-brand" class="footer-heading">Katrine Bern</h2>
+          <!-- Footer column 1: name and role -->
+          <section aria-labelledby="footer-info">
+            <h2 id="footer-info" class="footer-heading">Katrine Bern</h2>
             <p class="footer-role">GLOBAL BUSINESS ENGINEER | SW</p>
           </section>
-          <section aria-labelledby="f-contact">
-            <h2 id="f-contact" class="footer-heading">Contact</h2>
+
+          <!-- Footer column 2: contact info -->
+          <section aria-labelledby="footer-contact">
+            <h2 id="footer-contact" class="footer-heading">Contact</h2>
             <ul class="footer-list">
               <li><a href="mailto:342857@viauc.dk">342857@viauc.dk</a></li>
               <li>Aarhus, Denmark</li>
             </ul>
           </section>
+
+          <!-- Footer column 3: social media links -->
           <nav class="footer-nav" aria-label="Social media">
-            <h2 id="f-social" class="footer-heading">Social media</h2>
-            <ul class="footer-list social-list">
+            <h2 id="footer-social" class="footer-heading">Social media</h2>
+            <ul class="footer-list">
               <li>
                 <a
                   href="https://www.linkedin.com/in/katrine-bern/"
@@ -266,11 +295,13 @@
                   >LinkedIn</a
                 >
               </li>
+
               <li>
                 <a href="https://www.facebook.com/katrine.bern/" target="_blank"
                   >Facebook</a
                 >
               </li>
+
               <li>
                 <a href="https://www.instagram.com/katrinebern/" target="_blank"
                   >Instagram</a
@@ -279,6 +310,7 @@
             </ul>
           </nav>
         </div>
+        <!-- NOTE: Copyright line at bottom -->
         <div class="footer-bottom"><small>© 2025 Katrine Bern</small></div>
       </div>
     </footer>
