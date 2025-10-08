@@ -219,11 +219,6 @@ body {
   border-radius: 0.4rem;
 }
 
-.button-card:hover {
-  transform: translateY(-1px);
-  box-shadow: rgba(0, 0, 0, 0.4) 0 2px 4px;
-}
-
 .figure-project {
   display: grid;
   background: var(--project-border);
