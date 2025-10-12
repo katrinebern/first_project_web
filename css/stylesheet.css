@@ -1,10 +1,10 @@
 :root {
   --bg: #f5f7fa;
-  --text: #111;
+  --text: #1a1a1a;
   --brand-blue: #101094;
   --brand-orange: #ee9e15;
   --project-border: #d4e3f7;
-  --ink: #000;
+  --ink: #1a1a1a;
   --muted: #6b7280;
   --card: #ffffff;
   --border: #e5e7eb;
@@ -167,7 +167,7 @@ body {
 }
 
 .right-column p {
-  color: var(--ink);
+  color: var(--text);
   margin: 0.8rem auto 1.6rem;
 }
 
@@ -271,7 +271,7 @@ body {
   margin: 0 0 0.4rem 0;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
-  color: var(--ink);
+  color: var(--text);
 }
 
 .footer-list {
@@ -285,7 +285,7 @@ body {
 }
 
 .footer-list a {
-  color: var(--ink);
+  color: var(--text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
