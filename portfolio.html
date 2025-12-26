@@ -27,23 +27,37 @@
 
         <div class="grid" aria-label="Portfolio library">
           <article class="card">
-            <h3>1. My First Website</h3>
+            <h3>1. Project | Introduce Yourself - Personal Website</h3>
             <figure class="figure-project">
               <img src="images/my_website.png" alt="Project 1" />
             </figure>
 
-            <p><strong>Goals:</strong></p>
-            <ul>
-              <li>Obtain an understanding of Visual Studio Code</li>
-              <li>Gain basic HTML and CSS skills</li>
-              <li>Practice flecbox and grid layout</li>
-            </ul>
-
             <p>
-              On the website, you can get to know me better and see some of the
-              projects I love to work on in my free time&#129526;.
+              <strong>Description: </strong>A 3-page personal website created to
+              introduce myself. It includes a shared navigation bar across all
+              pages, semantic HTML structure, an “About” page explaining
+              background and motivation for studying at VIA, and an “Interests”
+              page showcasing hobbies plus a table to organize information. Each
+              page includes a footer with contact details and social links.
             </p>
-
+            <p><strong>Technologies Used:</strong></p>
+            <ul>
+              <li>
+                <strong>HTML</strong>
+                (3 separate pages; semantic elements such as
+                <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+                <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>,
+                <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>; table
+                for structured information; consistent footer with
+                contact/social links)
+              </li>
+              <li>
+                <strong>CSS</strong>
+                (shared stylesheet; CSS variables; responsive layout using CSS
+                Grid “Holy Grail” structure; media queries with
+                <code>@media</code> for smaller screens)
+              </li>
+            </ul>
             <p>
               <a
                 class="button-project"
@@ -55,81 +69,164 @@
           </article>
 
           <article class="card">
-            <h3>2. Project</h3>
+            <h3>2. Project | Job Discovery - Account Creation Form</h3>
             <figure class="figure-project">
-              <img src="images/Coming Soon.png" alt="Project 2 Coming Soon" />
+              <img
+                src="images/project2_mockup.png"
+                alt="Picture of Job Discovery's landing page"
+              />
             </figure>
-            <!-- plug and play for future projects:
-            <p><strong>Goals:</strong></p>
+            <p>
+              <strong>Description: </strong>A responsive, accessible “Create
+              Account” web form for a job discovery platform, built with
+              semantic HTML and clear labels/ARIA, plus client-side validation
+              and live feedback (e.g., 18+ age requirement and password
+              confirmation).
+            </p>
+            <p><strong>Technologies Used:</strong></p>
             <ul>
-              <li>Obtain an understanding of Visual Studio Code</li>
-              <li>Gain basic HTML and CSS skills</li>
-              <li>Practice flecbox and grid layout</li>
+              <li>
+                <strong>HTML</strong>
+                (semantic form structure; built-in form attributes;
+                accessibility via ARIA where needed such as <code>aria-*</code>)
+              </li>
+              <li>
+                <strong>CSS</strong>
+                (CSS variables; responsive layout with CSS Grid; form styling
+                including focus states)
+              </li>
+              <li>
+                <strong>Vanilla JavaScript</strong>
+                (DOM updates + event listeners; client-side validation such as
+                age check and password match; live UI feedback for inputs like
+                <code>&lt;input type=&quot;range&quot;&gt;</code>)
+              </li>
             </ul>
             <p>
-              On the website, you can get to know me better - and see some of
-              the projects I love to work on in my free time&#129526;.
-            </p>
-            <p>
-              <a class="button-project"
-                href="https://katrinebern.github.io/Katrine-s-Website/"
+              <a
+                class="button-project"
+                href="https://katrinebern.github.io/https---github.com-katrinebern-WEB_project_2/"
                 target="_blank"
                 >See project</a
               >
             </p>
-            -->
           </article>
 
           <article class="card">
-            <h3>3. Project</h3>
+            <h3>3. Project | Quiz Web Basics - Browser-Based Quiz Game</h3>
             <figure class="figure-project">
-              <img src="images/Coming Soon.png" alt="Project 3 Coming Soon" />
+              <img
+                src="images/project3_quiz.png"
+                alt="Picture of Quiz Web Basics' landing page"
+              />
             </figure>
-            <!-- plug and play for future projects:
-            <p><strong>Goals:</strong></p>
+            <p>
+              <strong>Description: </strong>A DOM-based multiple-choice quiz
+              game where the player selects a category, answers questions
+              one-by-one, and earns 1 point per correct answer. The game
+              includes start/quiz/end screens, keyboard-friendly answer
+              selection, score tracking, and a persistent highscore saved in
+              <code>localStorage</code> (plus saved category).
+            </p>
+            <p><strong>Technologies Used:</strong></p>
             <ul>
-              <li>Obtain an understanding of Visual Studio Code</li>
-              <li>Gain basic HTML and CSS skills</li>
-              <li>Practice flecbox and grid layout</li>
+              <li>
+                <strong>HTML</strong>
+                (structured screens/sections; form controls for category
+                selection; accessible labels and ARIA live updates e.g.
+                <code>aria-live</code>)
+              </li>
+              <li>
+                <strong>CSS</strong>
+                (CSS variables; responsive-friendly layout container; UI states;
+                small animations for question/answer appearance)
+              </li>
+              <li>
+                <strong>Vanilla JavaScript</strong>
+                (DOM rendering; event handling for click + keyboard, e.g.
+                <code>keydown</code>; game state management; scoring logic;
+                category-based question bank)
+              </li>
+              <li>
+                <strong>Web Storage API (<code>localStorage</code>)</strong>
+                (persistent highscore and saved category selection)
+              </li>
             </ul>
             <p>
-              On the website, you can get to know me better - and see some of
-              the projects I love to work on in my free time&#129526;.
-            </p>
-            <p>
-              <a class="button-project"
-                href="https://katrinebern.github.io/Katrine-s-Website/"
+              <a
+                class="button-project"
+                href="https://katrinebern.github.io/Project-3-WEB/"
                 target="_blank"
                 >See project</a
               >
             </p>
-            -->
           </article>
 
           <article class="card">
-            <h3>4. Project</h3>
+            <h3>
+              4. Project | Study Helper - Generative AI Study Plan Prototype
+            </h3>
             <figure class="figure-project">
-              <img src="images/Coming Soon.png" alt="Project 4 Coming Soon" />
+              <img
+                src="images/study_helper.png"
+                alt="Picture of Study Helper's landing page"
+              />
             </figure>
-            <!-- plug and play for future projects:
-            <p><strong>Goals:</strong></p>
+            <p>
+              <strong>Description: </strong>A client-server web prototype that
+              helps students plan and prioritize studying by collecting topics,
+              deadlines, study period, and weekly hour limits in a browser form,
+              then generating a structured, AI-produced study plan (overview,
+              priorities, prerequisites, week-by-week schedule, risk flags). The
+              frontend treats the AI output as untrusted text, parses/validates
+              it, enforces constraints (e.g., weekly hour cap), renders it, and
+              can restore the latest plan via <code>localStorage</code>.
+            </p>
+            <p><strong>Technologies Used:</strong></p>
             <ul>
-              <li>Obtain an understanding of Visual Studio Code</li>
-              <li>Gain basic HTML and CSS skills</li>
-              <li>Practice flecbox and grid layout</li>
+              <li>
+                <strong>HTML</strong>
+                (semantic structure for the client UI and form-based inputs)
+              </li>
+              <li>
+                <strong>CSS</strong>
+                (responsive layout; CSS variables for consistent theming)
+              </li>
+              <li>
+                <strong>Vanilla JavaScript</strong>
+                (DOM manipulation; form validation; Fetch API via
+                <code>fetch()</code> for client-server communication; Web
+                Storage via <code>localStorage</code>)
+              </li>
+              <li>
+                <strong>Node.js + Express</strong>
+                (backend API with a single <code>POST</code> endpoint;
+                CORS-enabled)
+              </li>
+              <li>
+                <strong>dotenv</strong>
+                (environment variable management via <code>.env</code> for API
+                keys and configuration)
+              </li>
+              <li>
+                <strong>Groq LLM API</strong>
+                (OpenAI-compatible chat completions; model e.g.
+                <code>llama-3.3-70b-versatile</code>)
+              </li>
+              <li>
+                <strong>JSON</strong>
+                (data interchange format between client, server, and AI output
+                parsing)
+              </li>
             </ul>
             <p>
-              On the website, you can get to know me better - and see some of
-              the projects I love to work on in my free time&#129526;.
-            </p>
-            <p>
-              <a class="button-project"
-                href="https://katrinebern.github.io/Katrine-s-Website/"
+              <a
+                class="button-project"
+                href="https://sep5prototype.github.io/sep5_final/"
                 target="_blank"
                 >See project</a
               >
             </p>
-            -->
           </article>
 
           <article class="card">

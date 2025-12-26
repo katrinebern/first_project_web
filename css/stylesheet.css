@@ -1,5 +1,6 @@
 :root {
   --bg: #f5f7fa;
+  --bg-text: #ebecec;
   --text: #1a1a1a;
   --brand-blue: #101094;
   --brand-orange: #ee9e15;
@@ -33,18 +34,18 @@ body {
   line-height: 1.6;
 }
 
+code {
+  font-size: large;
+  background: var(--bg-text);
+  color: var(--text);
+  line-height: 1.6;
+}
+
 .section {
   margin-inline: auto;
   max-width: 1200px;
   padding: 5%;
   letter-spacing: 0.04rem;
-}
-
-@media (min-width: 768px) {
-  .section {
-    padding-block: 1.6rem;
-    padding-inline: 2.4rem;
-  }
 }
 
 .site-header {
@@ -106,6 +107,8 @@ body {
   grid-template-columns: 1fr;
   gap: 2rem;
   align-items: center;
+  justify-items: center;
+  margin-inline: 1rem;
 }
 
 .left-column {
@@ -120,17 +123,17 @@ body {
 }
 
 .title-lock .first {
-  font-size: 2rem;
   color: var(--brand-blue);
   letter-spacing: 0.04rem;
   padding-left: 0.4rem;
+  font-size: clamp(1.5rem, 4.5vw, 2rem);
 }
 
 .title-lock .last {
-  font-size: 6rem;
   color: var(--brand-orange);
   letter-spacing: 0.08rem;
   padding-left: 0rem;
+  font-size: clamp(3.25rem, 10vw, 6rem);
 }
 
 .profile-card {
@@ -302,10 +305,25 @@ body {
 }
 
 @media (min-width: 768px) {
+  .section {
+    padding-block: 1.6rem;
+    padding-inline: 2.4rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    align-items: center;
+  }
+
   .right-column {
-    text-align: left;
+    max-width: none;
     margin-inline: 0;
-    padding-left: 0rem;
+    text-align: left;
+  }
+
+  .profile-card {
+    max-width: none;
   }
 
   .footer-grid {
@@ -313,10 +331,7 @@ body {
     max-width: 1100px;
     column-gap: 2rem;
     margin-inline: auto;
-  }
-
-  .grid {
-    grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 }
 
