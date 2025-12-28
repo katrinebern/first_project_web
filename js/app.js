@@ -2,7 +2,6 @@ const toggleBtn = document.querySelector("#theme-toggle");
 const page = document.body;
 
 const savedTheme = localStorage.getItem("theme");
-
 if (savedTheme === "dark") {
   page.classList.add("theme-dark");
   toggleBtn.setAttribute("aria-pressed", "true");
